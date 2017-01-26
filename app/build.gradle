@@ -5,7 +5,6 @@ android {
     buildToolsVersion "25.0.2"
 
     defaultConfig {
-        applicationId "io.rapidpro.androidchannel"
         minSdkVersion 9
         targetSdkVersion 14
     }
@@ -14,6 +13,14 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+    productFlavors {
+        ilhasoft {
+            applicationId "br.com.ilhasoft.androidchannel"
+        }
+        push {
+            applicationId "com.ilhapush.androidchannel"
         }
     }
 }
