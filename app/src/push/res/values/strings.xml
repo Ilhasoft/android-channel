@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Ilhapush Channel</string>
+    <string name="title_activity_home">Ilhapush</string>
+
+    <string name="registering"><b>Registering</b>\nPlease wait a moment, contacting Ilhapush to register your device.</string>
+
+    <string name="no_gcm"><b>Connecting Google Account</b>\n\nThis may take a few minutes. Make sure you are connected to the internet and have an active Google account on your device.</string>
+    <string name="resetting"><b>Contacting Ilhapush</b>\n\nWe are contacting the Ilhapush server to remove this device from your account.</string>
+
+    <string name="throttle_no_packs_remaining">You have installed the maximum number of packs. If you need more, please contact support@ilhasoft.com.br.</string>
+    <string name="active_message">Ilhapush is active and relaying messages to your account. Tap to pause Ilhapush.</string>
+    <string name="paused_message">Ilhapush is paused and will not relay messages to your account. Tap to resume Ilhapush.</string>
+
+    <string name="network_error_message">Ilhapush is unable to connect to the internet. Make sure you are connected to WiFi and that your mobile data is enabled.  If problems persist, try rebooting your device.</string>
+    <string name="send_error_message">Ilhapush is experiencing problems sending SMS messages. This may be a temporary problem with your network or may be an indication that your SIM is out of credit.  Messages will be retried, but if problems persist, check your phone\'s credit or try rebooting your device.</string>
 </resources>
