@@ -150,7 +150,7 @@ public class RapidPro extends Application {
 
         List<String> packs = new ArrayList<String>();
         for (ApplicationInfo packageInfo : packages) {
-            if (packageInfo.packageName.startsWith("io.rapidpro.androidchannel") &&
+            if (packageInfo.packageName.startsWith(getPackageName()) &&
                     packageInfo.packageName.indexOf("surveyor") <= 0) {
                 packs.add(packageInfo.packageName);
             }
@@ -432,9 +432,11 @@ public class RapidPro extends Application {
     public void installPack(Context context){
         List<String> packs = getInstalledPacks();
 
+        String packsPackageName = getPackageName() + ".pack";
+
         int packToInstall = 0;
         for (int i=1; i<=10; i++) {
-            if (!packs.contains("io.rapidpro.androidchannel.pack" + i)) {
+            if (!packs.contains(packsPackageName + i)) {
                 packToInstall = i;
                 break;
             }
@@ -442,7 +444,7 @@ public class RapidPro extends Application {
 
         if (packToInstall > 0) {
             Intent intent = new Intent(Intent.ACTION_VIEW);
-            intent.setData(Uri.parse("market://details?id=io.rapidpro.androidchannel.pack" + packToInstall));
+            intent.setData(Uri.parse("market://details?id=" + packsPackageName + packToInstall));
             context.startActivity(intent);
         }
     }
