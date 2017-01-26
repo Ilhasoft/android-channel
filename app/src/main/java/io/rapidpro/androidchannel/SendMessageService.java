@@ -41,6 +41,8 @@ public class SendMessageService extends IntentService {
     private static final String SMS_DELIVERED_REPORT_ACTION = "io.rapidpro.androidchannel.SMS_DELIVERED_REPORT";
     private static final String SMS_DELIVERED_REPORT_TOKEN_EXTRA = "token";
 
+    private static final int MIN_INTERNATIONAL_NUMBER_SIZE = 14;
+
     public SendMessageService() {
         super(SendMessageService.class.getSimpleName());
     }
@@ -62,7 +64,7 @@ public class SendMessageService extends IntentService {
             SmsManager smsManager = SmsManager.getDefault();
 
             // make sure we've got a plus for international format
-            if (!address.startsWith("+") && address.length() > 10) {
+            if (!address.startsWith("+") && address.length() >= MIN_INTERNATIONAL_NUMBER_SIZE) {
                 address = "+" + address;
             }
 
