@@ -23,6 +23,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
@@ -47,6 +48,7 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
     public static final String AIRPLANE_RESET = "airplane_reset";
 
     public static final String IS_PAUSED = "rapidproPaused";
+    public static final String IP_ADDRESS_VALUE = "ip";
 
     private Boolean showAdvancedSettings;
 
@@ -70,6 +72,13 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
         if (!showAdvancedSettings) {
             getPreferenceScreen().removePreference(getPreferenceManager().findPreference("advanced_settings"));
         }
+
+        ListPreference serverPref = (ListPreference) findPreference(SERVER);
+        serverPref.setDefaultValue(Config.ENDPOINT);
+        serverPref.setEntries(new CharSequence[]{ getString(R.string.ip_address),
+                Config.RAPIDPRO_NAME});
+        serverPref.setEntryValues(new CharSequence[]{ IP_ADDRESS_VALUE,
+                Config.ENDPOINT });
 
         findPreference(RESET).setOnPreferenceClickListener(this);
     }
