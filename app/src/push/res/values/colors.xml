@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="bg_dark_purple">#210054</color>
-    <color name="bg_darker_purple">#080015</color>
+    <color name="bg_dark_grey_two">#1e1e1e</color>
+    <color name="purple">#5941A3</color>
 
 </resources>
