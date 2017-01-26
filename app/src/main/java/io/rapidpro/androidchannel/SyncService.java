@@ -63,8 +63,6 @@ public class SyncService extends WakefulIntentService {
     // minimum time between us trying airplane mode shenanigans
     public static final long AIRPLANE_MODE_WAIT = 1000l * 60 * 10;
 
-    public static String ENDPOINT = "https://rapidpro.io";
-
     public SyncService(){
         super(SyncService.class.getSimpleName());
     }
@@ -388,7 +386,7 @@ public class SyncService extends WakefulIntentService {
 
         String relayerId = prefs.getString(SettingsActivity.RELAYER_ID, null);
         String secret = prefs.getString(SettingsActivity.RELAYER_SECRET, null);
-        String endpoint = prefs.getString(SettingsActivity.SERVER, ENDPOINT);
+        String endpoint = prefs.getString(SettingsActivity.SERVER, Config.ENDPOINT);
         String ip = prefs.getString(SettingsActivity.IP_ADDRESS, null);
 
         boolean force = intent.getBooleanExtra(Intents.FORCE_EXTRA, false) || !RapidPro.get().isClaimed();
