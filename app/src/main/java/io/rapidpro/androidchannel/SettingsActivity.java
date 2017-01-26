@@ -68,16 +68,21 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
 
         if (!showAdvancedSettings) {
             getPreferenceScreen().removePreference(getPreferenceManager().findPreference("advanced_settings"));
+        } else {
+            final ListPreference serverPref = (ListPreference) findPreference(SERVER);
+            setupServerPreferences(serverPref);
         }
 
-        ListPreference serverPref = (ListPreference) findPreference(SERVER);
-        serverPref.setDefaultValue(Config.ENDPOINT);
-        serverPref.setEntries(new CharSequence[]{ getString(R.string.ip_address),
-                Config.RAPIDPRO_NAME});
-        serverPref.setEntryValues(new CharSequence[]{ IP_ADDRESS_VALUE,
-                Config.ENDPOINT });
-
         findPreference(RESET).setOnPreferenceClickListener(this);
+    }
+
+    private void setupServerPreferences(ListPreference serverPref) {
+        CharSequence [] entries = new CharSequence[]{ getString(R.string.ip_address), Config.RAPIDPRO_NAME };
+        CharSequence [] entryValues = new CharSequence[]{ IP_ADDRESS_VALUE, Config.ENDPOINT };
+
+        serverPref.setEntries(entries);
+        serverPref.setDefaultValue(Config.ENDPOINT);
+        serverPref.setEntryValues(entryValues);
     }
 
     public static void setGCM(Context context, String id){
