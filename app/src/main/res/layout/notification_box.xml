@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:rapidpro="http://schemas.android.com/apk/res/io.rapidpro.androidchannel"
-                android:background="@drawable/notification_background"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:onClick="onSync"
-                android:clickable="true">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/notification_background"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:onClick="onSync"
+    android:clickable="true">
 
         <ImageView
             android:paddingBottom="45dp"
@@ -45,8 +45,8 @@
                 android:layout_marginRight="-20dp"
                 android:layout_marginTop="-5dp"
                 android:layout_below="@+id/last_updated"
-                rapidpro:onUpdateText="updateLastSync"
-                rapidpro:updateFrequency="1000" />
+                app:onUpdateText="updateLastSync"
+                app:updateFrequency="1000" />
 
         <TextView
                 android:id="@+id/status"
