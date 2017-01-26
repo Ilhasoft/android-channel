@@ -41,6 +41,9 @@ public class UnclaimedFragment extends Fragment {
         super.onActivityCreated(bundle);
         m_claimCode = (TextView) getView().findViewById(R.id.claim_code);
 
+        TextView claimCodeTitle = (TextView) getView().findViewById(R.id.claim_code_instructions);
+        claimCodeTitle.setText(getString(R.string.claim_instructions, Config.ENDPOINT));
+
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
         String code = prefs.getString(SettingsActivity.RELAYER_CLAIM_CODE, "...");
 
