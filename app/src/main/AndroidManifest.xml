@@ -7,8 +7,8 @@
         android:minSdkVersion="9"
         android:targetSdkVersion="14" />
 
-    <permission android:name="io.rapidpro.androidchannel.permission.C2D_MESSAGE" android:protectionLevel="signature" />
-    <uses-permission android:name="io.rapidpro.androidchannel.permission.C2D_MESSAGE" />
+    <permission android:name="${applicationId}.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+    <uses-permission android:name="${applicationId}.permission.C2D_MESSAGE" />
 
     <!-- App receives GCM messages. -->
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
@@ -39,9 +39,9 @@
     <uses-permission android:name="android.permission.DEVICE_POWER" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="io.rapidpro.androidchannel.SEND_MESSAGE"/>
+    <uses-permission android:name="${applicationId}.SEND_MESSAGE"/>
 
-    <permission android:name="io.rapidpro.androidchannel.SEND_MESSAGE" android:label="RapidPro Messages"></permission>
+    <permission android:name="${applicationId}.SEND_MESSAGE" android:label="RapidPro Messages"></permission>
 
     <uses-feature android:name="android.hardware.wifi" android:required="false" />
     <uses-feature android:name="android.hardware.telephony" android:required="true" />
@@ -80,10 +80,10 @@
                 android:name="io.rapidpro.androidchannel.SendMessageService"
                 android:enabled="true"
                 android:exported="true"
-                android:permission="io.rapidpro.androidchannel.SEND_MESSAGE">
+                android:permission="${applicationId}.SEND_MESSAGE">
             <intent-filter>
                 <action android:name="io.rapidpro.androidchannel.SendMessage" />
-                <category android:name="io.rapidpro.androidchannel" />
+                <category android:name="${applicationId}" />
             </intent-filter>
         </service>
 
@@ -136,7 +136,7 @@
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
-                <category android:name="io.rapidpro.androidchannel" />
+                <category android:name="${applicationId}" />
             </intent-filter>
         </receiver>
 
