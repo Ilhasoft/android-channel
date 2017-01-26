@@ -22,6 +22,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+
+import io.rapidpro.androidchannel.Config;
 import io.rapidpro.androidchannel.Intents;
 import io.rapidpro.androidchannel.SettingsActivity;
 import io.rapidpro.androidchannel.RapidPro;
@@ -59,7 +61,7 @@ public class ResetCommand extends QueueingCommand {
 
     @Override
     public String getBody() {
-        return "Removing device from RapidPro Server";
+        return "Removing device from " + Config.RAPIDPRO_NAME + " Server";
     }
 
     @Override

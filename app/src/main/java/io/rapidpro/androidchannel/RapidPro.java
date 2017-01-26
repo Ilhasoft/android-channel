@@ -176,8 +176,8 @@ public class RapidPro extends Application {
         NotificationCompat.Builder builder =
                 new NotificationCompat.Builder(this)
                         .setSmallIcon(R.drawable.ic_notification)
-                        .setContentTitle("RapidPro")
-                        .setContentText("RapidPro is active and relaying messages.")
+                        .setContentTitle(getString(R.string.app_name))
+                        .setContentText(getString(R.string.active_notification_text))
                         .setOngoing(true);
 
         Intent resultIntent = new Intent(this, HomeActivity.class);

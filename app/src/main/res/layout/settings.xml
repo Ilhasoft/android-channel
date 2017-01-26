@@ -24,7 +24,7 @@
                 android:entries="@array/networks"
                 android:entryValues="@array/networks_values"
                 android:key="default_network"
-                android:summary="The default method to use when delivering messages. RapidPro will back down to other methods if it encounters a network error."
+                android:summary="@string/preferred_network_summary"
                 android:title="Preferred Network" />
 
         <CheckBoxPreference
@@ -35,7 +35,7 @@
 
         <CheckBoxPreference
                 android:key="sms_auto_delete"
-                android:summary="Whether SMS messages should be deleted automatically from the inbox after they are sent to RapidPro."
+                android:summary="@string/sms_auto_delete_summary"
                 android:defaultValue="false"
                 android:title="Delete Messages" />
 
