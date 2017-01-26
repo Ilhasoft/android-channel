@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/active_icon"
-            android:text="RapidPro Active"
+            android:text="@string/active"
             android:layout_marginLeft="5dp"
             android:textColor="@color/font_green"
             android:textStyle="bold"
