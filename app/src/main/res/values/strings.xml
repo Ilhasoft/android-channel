@@ -70,5 +70,11 @@
     <string name="send_error_message">RapidPro is experiencing problems sending SMS messages. This may be a temporary problem with your network or may be an indication that your SIM is out of credit.  Messages will be retried, but if problems persist, check your phone\'s credit or try rebooting your device.</string>
 
     <string name="ip_address">IP Address</string>
+
+    <string name="paused">RapidPro Paused</string>
     <string name="active">RapidPro Active</string>
+    <string name="active_notification_text">RapidPro is active and relaying messages.</string>
+
+    <string name="preferred_network_summary">The default method to use when delivering messages. RapidPro will back down to other methods if it encounters a network error.</string>
+    <string name="sms_auto_delete_summary">Whether SMS messages should be deleted automatically from the inbox after they are sent to RapidPro.</string>
 </resources>

@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/paused_icon"
-            android:text="RapidPro Paused"
+            android:text="@string/paused"
             android:layout_marginLeft="5dp"
             android:textColor="@color/font_orange"
             android:textStyle="bold"
