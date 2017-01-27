@@ -7,6 +7,10 @@ packs/store/apks
 packs/AndroidManifest.xml
 secure.properties
 
+# Built application files
+*.apk
+*.ap_
+
 # Local configuration file (sdk path, etc)
 local.properties
 !packs/local.properties

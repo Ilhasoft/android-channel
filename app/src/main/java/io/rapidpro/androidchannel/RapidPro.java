@@ -75,6 +75,7 @@ public class RapidPro extends Application {
 
     private HashMap<String, ArrayList<Long>> m_sendReports = new HashMap<String, ArrayList<Long>>();
 
+    @SuppressWarnings("ResourceType")
     @Override
     public void onCreate() {
         super.onCreate();
