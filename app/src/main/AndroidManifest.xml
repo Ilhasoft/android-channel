@@ -83,7 +83,7 @@
                 android:permission="io.rapidpro.androidchannel.SEND_MESSAGE">
             <intent-filter>
                 <action android:name="io.rapidpro.androidchannel.SendMessage" />
-                <category android:name="io.rapidpro.androidchannel" />
+                <category android:name="${applicationId}" />
             </intent-filter>
         </service>
 
