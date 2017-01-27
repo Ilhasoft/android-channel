@@ -53,7 +53,7 @@
     </RelativeLayout>
 
     <TextView
-            android:id="@+id/claim_code"
+            android:id="@+id/claim_code_instructions"
             android:textSize="20dp"
             android:text="@string/claim_instructions"
             android:layout_marginTop="0dp"
