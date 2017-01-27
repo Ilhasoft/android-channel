@@ -7,7 +7,7 @@
      <echo message="Building number ${env.PACK_NUMBER}.."/>
      <copy file="config/AndroidManifest.xml" todir="." overwrite="true" encoding="utf-8">
        <filterset>
-          <filter token="CONFIG.APP_PACKAGE_NAME" value="io.rapidpro.androidchannel.pack${env.PACK_NUMBER}" />
+          <filter token="CONFIG.APP_PACKAGE_NAME" value="com.ilhapush.androidchannel.pack${env.PACK_NUMBER}" />
        </filterset>
      </copy>           
   </target>
