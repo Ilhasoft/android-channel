@@ -23,6 +23,10 @@ android {
         }
         push {
             applicationId "com.ilhapush.androidchannel"
+            defaultConfig {
+                versionCode 2
+                versionName "1.1.0"
+            }
         }
     }
 }
