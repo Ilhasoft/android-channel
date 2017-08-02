@@ -1,6 +1,6 @@
 #!/bin/sh
 i=1
-while [ $i -le 10 ]
+while [ $i -le 100 ]
 do
     echo "Building pack $i"
     export PACK_NUMBER=$i
