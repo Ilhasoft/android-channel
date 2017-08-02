@@ -140,7 +140,7 @@ public class DashboardFragment extends Fragment implements Intents {
 
 
         // how many packs do they have remaining
-        int packsRemaining = 11 - RapidPro.get().getInstalledPacks().size();
+        int packsRemaining = (100 + 1) - RapidPro.get().getInstalledPacks().size();
         String installText = getResources().getString(R.string.throttle_packs_remaining);
         if (packsRemaining == 0) {
             installText = getResources().getString(R.string.throttle_no_packs_remaining);
