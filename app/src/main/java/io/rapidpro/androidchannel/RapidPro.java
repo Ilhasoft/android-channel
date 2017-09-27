@@ -237,10 +237,12 @@ public class RapidPro extends Application {
     private void prunePack(ArrayList<Long> sends) {
         // prune our list of messages which are too old
         long cutoff = System.currentTimeMillis() - MESSAGE_THROTTLE_WINDOW;
-        for (Iterator<Long> it = sends.iterator(); it.hasNext();) {
-            long send = it.next();
+
+        Iterator<Long> iterator = sends.iterator();
+        while (iterator.hasNext()) {
+            long send = iterator.next();
             if (send < cutoff) {
-                it.remove();
+                iterator.remove();
             } else {
                 break;
             }
