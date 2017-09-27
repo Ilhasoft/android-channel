@@ -225,10 +225,10 @@ public final class SMSModem extends BroadcastReceiver {
         String[] values = new String[map.size()];
         int i=0;
 
-        synchronized(map){
-            for (String key: map.keySet()){
-                keys[i] = key;
-                values[i] = map.get(key).toString();
+        synchronized(map) {
+            for (Map.Entry<String, Integer> item : map.entrySet()) {
+                keys[i] = item.getKey();
+                values[i] = item.getValue().toString();
                 i++;
             }
         }
