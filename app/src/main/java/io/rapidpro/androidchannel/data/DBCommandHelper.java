@@ -343,9 +343,9 @@ public class DBCommandHelper extends SQLiteOpenHelper {
         }
 
         Cursor cursor = context.getContentResolver().query(DBCommandContentProvider.CONTENT_URI, ALL_COLS, match , values , "_id" + ((max != -1) ? " LIMIT " + max : ""));
+        List<Command> commands = new ArrayList<Command>();
 
         try {
-            List<Command> commands = new ArrayList<Command>();
             while (cursor.moveToNext()) {
                 commands.add(Command.fromCursor(cursor));
             }
@@ -355,11 +355,12 @@ public class DBCommandHelper extends SQLiteOpenHelper {
             }
 
             return commands;
-
+        } catch(IllegalStateException exception) {
+            Log.e("DBCommandHelper", "getPendingCommands: ", exception);
+            return commands;
         } finally {
             cursor.close();
         }
-
     }
 
     public static int getCommandCount(Context context, int direction, int state, String cmd){
