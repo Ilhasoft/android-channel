@@ -14,7 +14,6 @@ keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 android {
     compileSdkVersion 26
     buildToolsVersion '28.0.3'
-    useLibrary 'org.apache.http.legacy'
 
     signingConfigs {
         config {
@@ -26,19 +25,15 @@ android {
     }
 
 
-    lintOptions {
-          checkReleaseBuilds false
-          // Or, if you prefer, you can continue to check for errors in release builds,
-          // but continue the build even when errors are found:
-          abortOnError false
-      }
-
     defaultConfig {
-        applicationId "io.rapidpro.androidchannel"
-        minSdkVersion 21
+        if (project.hasProperty('packNumber')) {
+            applicationId "io.rapidpro.androidchannel.pack$packNumber"
+        } else {
+            applicationId "io.rapidpro.androidchannel.pack1"
+        }
+
+        minSdkVersion 14
         targetSdkVersion 26
-        versionCode 198
-        versionName "1.9.8"
     }
 
     buildTypes {
@@ -49,13 +44,3 @@ android {
         }
     }
 }
-
-dependencies {
-    implementation files('libs/json_simple-1.1.jar')
-    implementation 'com.android.support:support-core-utils:26+'
-    implementation 'com.google.firebase:firebase-core:16.0.5'
-    implementation 'com.google.firebase:firebase-messaging:17.3.4'
-    implementation 'com.android.support:support-v4:26+'
-}
-
-apply plugin: 'com.google.gms.google-services'

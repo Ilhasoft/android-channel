@@ -1,11 +1,12 @@
 #!/bin/sh
+mkdir -p store/apks
 i=1
 while [ $i -le 10 ]
 do
     echo "Building pack $i"
     export PACK_NUMBER=$i
-    ant release
-    cp bin/packs-release.apk store/apks/pack$i.apk
+    ../gradlew -PpackNumber=$i build
+    cp build/outputs/apk/release/packs-release.apk store/apks/pack$i.apk
     i=`expr $i + 1`
 done
 
